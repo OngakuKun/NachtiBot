@@ -1,0 +1,42 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Debug",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"BUILD_MODE=DEBUG"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Build Release",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"BUILD_MODE=DEBUG"
+			],
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "cleanUp",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"clean"
+			],
+			"group": "none",
+			"problemMatcher": []
+		}
+	]
+}

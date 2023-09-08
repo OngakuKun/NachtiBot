@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "name": "NachtiBot Release",
+            "includePath": [
+                "/usr/local/include/",
+                "${workspaceFolder}/src/**"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        },
+        {
+            "name": "NachtiBot Debug",
+            "includePath": [
+                "/usr/local/include/",
+                "${workspaceFolder}/src/**"
+            ],
+            "defines": [
+                "DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
