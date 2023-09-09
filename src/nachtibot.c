@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
     if (argc > 1)
         config_file = argv[1];
     else
-        config_file = "config.json";
+        config_file = "./config.json";
 
     ccord_global_init();
     struct discord *client = discord_config_init(config_file);
@@ -104,9 +104,6 @@ int main(int argc, char *argv[])
 
     /* Keep just DISCORD_GATEWAY_DIRECT_MESSAGES */
     discord_remove_intents(client, DISCORD_GATEWAY_GUILD_MESSAGES);
-
-    print_usage();
-    fgetc(stdin); // wait for input
 
     pthread_t tid;
     pthread_create(&tid, NULL, &read_input, client);
