@@ -5,6 +5,7 @@ BUILD_MODE         ?= DEBUG
 SRC_DIR             = src
 OBJ_DIR             = bin/obj
 
+.PHONY: all clean install
 MAKEFILE_PARAMS = $(PROJECT_NAME)
 
 CC = gcc
@@ -47,3 +48,7 @@ $(OBJ_DIR)/nachtibot.o: src/nachtibot.c src/defines.h
 
 clean:
 	rm -rf bin
+
+install:
+	cp bin/nachtibot /usr/local/bin/nachtibot/nachtibot
+	cp config.json /usr/local/bin/nachtibot/config.json
