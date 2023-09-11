@@ -5,12 +5,13 @@
 #include <pthread.h>
 #include <assert.h>
 
+#include "defines.h"
 #include "concord/discord.h"
 #include "concord/log.h"
 
 void on_ready(struct discord *client, const struct discord_ready *event)
 {
-    log_info("NachtiBot succesfully connected to Discord!");
+    log_info("%s - v%s succesfully connected to Discord!", NAME, VERSION);
     log_info("    > Logged-in as %s#%s", event->user->username, event->user->discriminator);
 }
 
@@ -31,7 +32,6 @@ int main(int argc, char *argv[])
 
     ccord_global_init();
     struct discord *client = discord_config_init(config_file);
-    struct discord_presence_update statusUpdate = { 0 };
     assert(NULL != client && "Couldn't initialize client");
 
     discord_add_intents(client, DISCORD_GATEWAY_MESSAGE_CONTENT);
